@@ -1,4 +1,5 @@
 {
+  "homepage": "http://prasannabhat018.github.io/college-space-ui/",
   "name": "college_management",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +14,7 @@
     "font-roboto": "0.0.2",
     "fontsource-open-sans": "^3.0.9",
     "fontsource-roboto": "^3.0.3",
+    "gh-pages": "^3.2.3",
     "material-table": "^1.69.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
@@ -28,6 +30,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
