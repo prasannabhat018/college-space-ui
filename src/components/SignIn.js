@@ -44,6 +44,11 @@ export default function SignIn(props) {
   let text = " SIGN IN";
   const history = useHistory();
 
+  const demoStudentMail="dummystudent@gmail.com";
+  const demoStudentPassword="dummystudent";
+  const demoTeacherMail="dummyinstructor@gmail.com";
+  const demoTeacherPassword="dummyinstructor";
+
   const handleClick = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -124,6 +129,16 @@ export default function SignIn(props) {
   else if (props.isTeacher) text = "TEACHER" + text;
   else text = "STUDENT" + text;
 
+  let demoEmail,demoPassword;
+  if(props.isTeacher){
+    demoEmail=demoTeacherMail;
+    demoPassword=demoTeacherPassword;
+  }else if(props.isAdmin){}
+  else{
+    demoEmail=demoStudentMail;
+    demoPassword=demoStudentPassword;
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -183,11 +198,14 @@ export default function SignIn(props) {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link to="/reset">Forgot password?</Link>
-            </Grid>
-          </Grid>
+          {
+            !(props.isAdmin) &&
+            <div>
+              <Typography color="textPrimary">For Demo Purpose</Typography>
+              <Typography color="textSecondary">Email - {demoEmail}</Typography>
+              <Typography color="textSecondary">Password - {demoPassword}</Typography>
+            </div>
+          }
         </form>
       </div>
     </Container>

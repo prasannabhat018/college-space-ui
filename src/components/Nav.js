@@ -90,7 +90,7 @@ export default function Nav({ user }) {
                 <ListItemIcon>
                   <AiOutlineFolderAdd size="20px" className={classes.icons} />
                 </ListItemIcon>
-                <ListItemText primary={"Add Company"} />
+                <ListItemText primary={"Add Visiting Company"} />
               </ListItem>
             ) : (
               <div></div>

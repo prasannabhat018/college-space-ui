@@ -11,6 +11,7 @@ import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Icon } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -74,16 +75,16 @@ export default function Home({ user }) {
               link={"/home/student/placement"}
             />
           </Grid>
-          <Grid item lg={lgColumns}>
-            <BigButton
-              component={
-                <Icon className={classes.root}>
-                  <img src="/assets/notes.svg" />
-                </Icon>
-              }
-              title={"Course Notes"}
-            />
-          </Grid>
+            <Grid item lg={lgColumns}>
+              <BigButton
+                component={
+                  <Icon className={classes.root}>
+                    <img src="/assets/notes.svg" />
+                  </Icon>
+                }
+                title={"Course Notes"}
+              />
+            </Grid>
           {user && user.is_spc ? (
             <Grid item lg={lgColumns}>
               <BigButton
@@ -92,7 +93,7 @@ export default function Home({ user }) {
                     <img src="/assets/create.svg" />
                   </Icon>
                 }
-                title={"Add Company"}
+                title={"Add Company For Placements"}
                 link={"/home/student/creation"}
               />
             </Grid>
